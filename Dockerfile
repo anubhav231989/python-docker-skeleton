@@ -18,6 +18,9 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps gcc libc-dev linux-hea
 RUN mkdir -p /source
 WORKDIR /source
 
+#UPDATE PIP.
+RUN pip install --upgrade pip
+
 #COPY/ADD THE REQUIREMENTS FILE.
 COPY ./dependencies.txt .
 
@@ -25,6 +28,7 @@ COPY ./dependencies.txt .
 RUN pip install -r dependencies.txt
 
 #OPTIONALLY DELETE TEMPORARY DEPENDENCIES.
+RUN apk del .tmp-build-deps
 
 #COPY/ADD THE SOURCE CODE.
 COPY ./source source
