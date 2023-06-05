@@ -18,7 +18,7 @@ At this point, you have successfully cloned the GitHub repository and created a 
 You can now make changes, commit them, and manage the repository using Git commands.
 
 Run the following command to create the django project or any other project.
-  docker-compose run --rm web sh -c "django-admin startproject my_django_project ."
+  docker-compose run --rm web sh -c "django-admin startproject my_django_project source/"
 
 
 
