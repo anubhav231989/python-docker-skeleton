@@ -5,6 +5,6 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:9000
     volumes:
-      - .:/source
+      - ./source:/source
     ports:
       - "9000:9000"
